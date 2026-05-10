@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Bootstrap CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar main-nav" style="background-color: #A49B8A; width: 100%; border-radius: 0 0 15px 15px;" >
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="../images/logo.png" alt="Logo" class="img-fluid mx-5" width="90"
+                    height="80" /></a>
+            <form class="d-flex">
+                <button type="button" class="btn mx-2" disabled>Kezdőoldal</button>
+                <button type="button" class="btn mx-2" href="galery.html">Galéria</button>
+                <button type="button" class="btn mx-2" href="about.html">Magamról</button>
+                <button type="button" class="btn mx-2" href="pricing.html">Árlista</button>
+                <button type="button" class="btn mx-2" href="contact.html">Kapcsolat</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-5 hero-section" style="margin-bottom: 5%">
+
+        <div class="container text-center py-4">
+
+            <img src="../images/logo.png" alt="Logo" class="img-fluid mb-4" width="250" height="100" />
+
+            <h1 class="display-4 mb-2" style="font-family: 'Inria Serif', serif; color: #ffffff !important;">
+                Ahol a szépség találkozik
+            </h1>
+            <h1 class="display-4 mb-3"
+                style="font-family: 'Inria Serif', serif; color: #fff !important; font-style: italic; ">
+                a művészettel
+            </h1>
+
+            <hr style="width: 60px; border-color: #D9D9D9; opacity: 0.5; margin: 1.5rem auto;">
+
+            <p class="mb-4 mx-auto"
+                style="max-width: 520px; color: #FFFFFF; opacity: 0.85; font-size: 1rem; line-height: 1.8;">
+                Fotós és fodrász egy személyben. Vintage hangulat, romantikus részletek és örök emlékek.
+                Gyere el a stúdióba és örökítsük meg a legszebb pillanataidat.
+            </p>
+
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="galery.html" class="btn px-4 py-2"
+                    style="background-color: #f5efe8; color: #6b5e50; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border-radius: 2px;">
+                    Galéria
+                </a>
+                <a href="contact.html" class="btn px-4 py-2"
+                    style="border: 1px solid #f5efe8; color: #f5efe8; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border-radius: 2px;">
+                    Kapcsolatfelvétel
+                </a>
+
+                <a href="pricing.html" class="btn px-4 py-2"
+                    style="border: 1px solid #f5efe8; color: #f5efe8; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border-radius: 2px;">
+                    Árlista
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- <h1 class="text-center mt-5 mb-3"> Ahol a szépség találkozik <br>a művészettel</h1> -->
+
+        <p class="text-center fs-5 mb-4 mt-5" style="font-size: 1.5rem !important;"> Szia! <b>Wilhelm Bernadett</b>
+            vagyok,
+            fodrász és fotós egy személyben. Igen,
+            tudom,
+            ritka
+            párosítás,
+            de nálam ez teljesen természetes. Több mint harminc éve dolgozom fodrászként, és közben rájöttem,
+            hogy szeretném ha a szépítkezés eredménye meg is lenne örökítve.
+            Imádom a <b>vintage</b> hangulatot, a <b>romantikus</b> vagy meghitt pillanatokat, de a vidám, fesztelen,
+            bulizós képek sem okoznak kihívást számomra! Szeretem amikor valaki meglátja
+            magát a képen és csak annyit mond: <b>"Ez én vagyok?"</b></p>
+
+    </div>
+
+    <!-- Carousel 1 -->
+    <div class="container-fluid rounded image-card py-3" style="width: 96%; margin: 40px auto; margin-bottom: 7%;">
+        <div class="container-xxl position-relative">
+            <button class="carousel-arrow left" onclick="carousel1.scroll(-1)">&#8249;</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack1"></div>
+            </div>
+            <button class="carousel-arrow right" onclick="carousel1.scroll(1)">&#8250;</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="text-start mt-5 mb-3">A Stúdió</h1>
+
+        <p class="text-start fs-5 mb-4"> Nem egyszerűen egy fotóstúdió. A fodrászat mellett van egy saját kis
+            univerzumom, tele <b>antik tükrökkel</b>, <b>csipkés textilekkel</b>,
+            <b>régi bőröndökkel</b>, <b>virágokkal</b> és bármilyen <b>ünnephez</b>, <b>hangulathoz</b>,
+            <b>stílushoz</b> megfelelő kellékekkel, amiket
+            évek óta gyűjtögetek. Minden azért van itt, hogy a <b>te fotóid ne csak szépek legyen</b>, hanem <b>igazán a
+                magadénak
+                érezd</b>. Fontos számomra, hogy a fotózás során fesztelen, és jó hangulat legyen, és jól érezd magad
+            közben.
+            Szerintem a részletek teszik igazán különlegessé a képeket, és éppen ezért nagy hangsúlyt fektetek rájuk.
+            Nézz körül a <a href="galery.html">galériámban</a> is, bármilyen elképzelést igyekszem megvalósítani!
+        </p>
+
+    </div>
+
+    <!-- Carousel 2 -->
+    <div class="container-fluid rounded image-card py-3" style="width: 96%; margin: 40px auto;margin-bottom: 7%;">
+        <div class="container-xxl position-relative">
+            <button class="carousel-arrow left" onclick="carousel2.scroll(-1)">&#8249;</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack2"></div>
+            </div>
+            <button class="carousel-arrow right" onclick="carousel2.scroll(1)">&#8250;</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="text-end mt-5 mb-3"> Páros fotózás </h1>
+
+        <p class="text-end fs-5 mb-4"><b>Mert a szerelem megérdemli, hogy megőrizd.</b> Legyen szó egy friss párról, egy
+            hosszú
+            évek után megérdemelt romantikus fotózásról vagy csak egy szép közös emlékről, a páros képeim mindig az
+            őszinte pillanatokra fókuszálnak. Nem kell pózolni, nem kell előre begyakorolni semmit, csak legyetek
+            önmagatok és a többi az én dolgom. <b>Sokszor az a legjobb kép, amit senki nem tervezett.</b> Ha szeretnéd
+            megnézni, hogyan örökítem meg a szerelem pillanatait, böngészd át a <a href="galery.html">galériámat</a>,
+            biztos találsz majd olyat,
+            amit el tudsz képzelni kettőtök számára.</p>
+
+    </div>
+
+    <!-- Carousel 3 -->
+    <div class="container-fluid rounded image-card py-3" style="width: 96%; margin: 40px auto;margin-bottom: 7%;">
+        <div class="container-xxl position-relative">
+            <button class="carousel-arrow left" onclick="carousel3.scroll(-1)">&#8249;</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack3"></div>
+            </div>
+            <button class="carousel-arrow right" onclick="carousel3.scroll(1)">&#8250;</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="text-start mt-5 mb-3"> Család</h1>
+
+        <p class="text-start fs-5 mb-4"> A családi fotózások megörökítik a szülő, gyermek, nagyszülők, testvérek
+            közötti harmonikus szeretet teljes kapcsolatokat. Ezeket az emlékeket érdemes megőrizni, mert <b>gyorsabban
+                elrepülnek, mint gondolnád</b>. Nem kell hozzá különleges alkalom, nem kell évforduló vagy ünnep. Néha
+            épp a
+            <b>hétköznapokból születnek a legszebb képek</b>. Ha még bizonytalankodsz, nézd meg a <a
+                href="galery.html">galériában</a> a családi fotókat
+            és döntsd el te magad!
+        </p>
+
+    </div>
+
+    <!-- Carousel 4 -->
+    <div class="container-fluid rounded image-card py-3" style="width: 96%; margin: 40px auto;margin-bottom: 7%;   ">
+        <div class="container-xxl position-relative">
+            <button class="carousel-arrow left" onclick="carousel4.scroll(-1)">&#8249;</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack4"></div>
+            </div>
+            <button class="carousel-arrow right" onclick="carousel4.scroll(1)">&#8250;</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="text-center mt-5 mb-3">Lélek fény csomag</h1>
+
+        <p class="text-center fs-5 mb-4"> <b>Ez a csomag rólad szól.</b> Megérdemled, hogy amikor igazán szépnek érzed
+            magad,
+            azt megörökítsd. Akár magadnak, akár a párodnak, igazi énidő! A csomag tartalmazz egy <b>ayurvédikus
+                fejmasszázst</b>, hogy teljesen el tudj lazulni, aztán <b>hajmosás</b> és a <b>tökéletes frizura</b>
+            következik. Ha
+            elkészültél és ragyogsz, <b>irány a stúdió</b> és megörökítjük az egészet. Semmi szervezkedés, semmi külön
+            ugrálás,
+            egy helyen intézünk el mindent és te csak élvezed az egészet.</p>
+    </div>
+
+    <!-- Carousel 5 -->
+    <div class="container-fluid rounded image-card py-3" style="width: 96%; margin: 40px auto; margin-bottom: 7%;">
+        <div class="container-xxl position-relative">
+            <button class="carousel-arrow left" onclick="carousel5.scroll(-1)">&#8249;</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack5"></div>
+            </div>
+            <button class="carousel-arrow right" onclick="carousel5.scroll(1)">&#8250;</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="text-center mt-5 mb-3" style="font-size: 7rem !important;">Készen állsz?</h1>
+
+        <p class="text-center fs-5 mb-4"> Ha eddig eljutottál az olvasásban, valószínűleg már tudod, hogy <b>ez az, amit
+                keresel.</b> Akár egy <b>különleges fotózásra gondolsz</b>, akár csak <b>kíváncsi vagy a
+                lehetőségekre</b>, ne hagyd, hogy a
+            kérdések benned maradjanak. Nézd meg a <a href="galery.html">galériát</a>, böngészd az <a
+                href="pricing.html">árlistát</a>, vagy egyszerűen csak <b>írj nekem</b>.
+            Örülök minden megkeresésnek!</p>
+    </div>
+
+    <form class="d-flex mx-auto my-5 justify-content-center">
+        <button type="button" class="btn btn-lg mx-5" href="galery.html">Galéria</button>
+        <button type="button" class="btn btn-lg mx-5" href="about.html">Magamról</button>
+        <button type="button" class="btn btn-lg mx-5" href="pricing.html">Árlista</button>
+        <button type="button" class="btn btn-lg mx-5" href="contact.html">Kapcsolat</button>
+    </form>
+
+
+    <footer class="navbar" style="background-color: #A49B8A;">
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="../images/logo.png" alt="Logo" class="img-fluid py-3 position" width="370px"
+                    style="margin-left:20%; position: absolute; bottom: 10px; transform: translateX(-100%); left: 5%;"></a>
+
+            <form class="d-flex flex-column align-items-end mt-5 mx-4">
+                <p class="text-end my-2" style="font-size: 4rem;">info@beautyglow.hu <img class="pb-1"
+                        src="../icons/envelope-solid-full.svg" alt="Envelope icon" width="12%"></p>
+
+                <p class="text-end my-2" style="font-size: 4rem;">+36 30 549 9699 <img class="pb-4"
+                        src="../icons/phone-solid-full.svg" alt="Phone icon" width="12%"></p>
+
+                <p class="text-end mb-0" style="font-size: 4rem;">@bernadett.wilhelm <img class="pb-1"
+                        src="../icons/square-facebook-brands-solid-full.svg" alt="Envelope icon" width="12%"></p>
+            </form>
+
+            <form class="d-flex flex-column align-items-center mx-4"
+                style="position: absolute; bottom: 5px; left: 45%; transform: translateX(-50%); width: 100%; pointer-events: none;">
+                <p class="text-center" style="pointer-events: auto;font-size: 0.8rem; margin-bottom: 0.2rem;">&copy;
+                    2026 Beauty & Glow Studio | Minden jog
+                    fenntartva.</p>
+                <p class="text-center" style="pointer-events: auto; font-size: 0.8rem;">Oldalt készítette: <a
+                        href="https://www.drxy.hu" style="color: #6b5e50 !important;">Kis-Borbás Dorián</a></p>
+            </form>
+        </div>
+
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

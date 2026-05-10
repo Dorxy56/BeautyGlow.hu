@@ -1,0 +1,119 @@
+* {
+    color: #403732;
+    font-family: 'Inria Sans';
+}
+
+h1 {
+    font-family: 'Inria Serif';
+    color: #C2666C !important;
+    font-size: 5rem !important;
+}
+
+b {
+    color: #C2666C;
+}
+
+.main-nav {
+    display: none !important;
+    content-visibility: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.main-nav.show {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    content-visibility: visible !important;
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+    animation: navFadeIn 0.3s ease forwards;
+}
+
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a {
+    color: #C2666C !important;
+    text-decoration: underline !important;
+}
+
+.hero-section {
+    background-color: #A49B8A;
+    margin-bottom: 2rem;
+}
+
+.btn:disabled {
+    background-color: #C2666C !important;
+    color: #D9D9D9 !important;
+}
+
+.btn {
+    background-color: #D9D9D9 !important;
+    color: #403732 !important;
+    font-family: 'Inria Sans' !important;
+}
+
+.btn:hover {
+    background-color: #C2666C !important;
+    color: #D9D9D9 !important;
+}
+
+.image-card {
+    background-color: #C69A8F;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.carousel-item-custom {
+    flex: 0 0 calc(25% - 0.75rem);
+    min-width: calc(25% - 0.75rem);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.carousel-arrow.left {
+    left: -2rem;
+}
+
+.carousel-arrow.right {
+    right: -2rem;
+}
+
+.carousel-arrow:hover {
+    background: rgba(255, 255, 255, 1);
+}
