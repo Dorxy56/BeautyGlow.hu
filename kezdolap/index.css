@@ -117,3 +117,58 @@ a {
 .carousel-arrow:hover {
     background: rgba(255, 255, 255, 1);
 }
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 200px;
+}
+
+.footer-contact {
+    font-size: 3rem;
+    text-align: right;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-icon {
+    width: 40px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
+.footer-copy {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .carousel-item-custom {
+        flex: 0 0 calc(50% - 0.75rem);
+        min-width: calc(50% - 0.75rem);
+    }
+
+    .footer-main {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 150px;
+    }
+
+    .footer-contact {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .footer-icon {
+        width: 22px;
+    }
+}
