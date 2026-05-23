@@ -3,14 +3,21 @@
     font-family: 'Inria Sans';
 }
 
-body, html {
-    overflow-x:clip !important;
+body,
+html {
+    overflow-x: clip !important;
 }
 
 h1 {
     font-family: 'Inria Serif';
     color: #C2666C !important;
     font-size: 5rem !important;
+}
+
+h2 {
+    font-family: 'Inria Serif';
+    color: #C2666C !important;
+    font-size: 7rem !important;
 }
 
 b {
@@ -50,9 +57,13 @@ b {
     }
 }
 
-a {
+a:not(.btn) {
     color: #C2666C !important;
     text-decoration: underline !important;
+}
+
+a.btn {
+    text-decoration: none !important;
 }
 
 .hero-section {
@@ -237,6 +248,10 @@ a {
 
     h1 {
         font-size: 2.4rem !important;
+    }
+
+    h2 {
+        font-size: 3.5rem !important;
     }
 
     .hero-section .container img {
