@@ -64,51 +64,51 @@ class Carousel {
 
 
 const carousel1 = new Carousel('carouselTrack1', [
-    '../images/c1-1.jpg',
-    '../images/c1-2.jpg',
-    '../images/c1-3.jpg',
-    '../images/c1-4.jpg',
-    '../images/c1-5.jpg',
-    '../images/c1-6.jpg',
-    '../images/c1-7.jpg'
+    'https://cdn.beautyglow.hu/images/c1-1.jpg',
+    'https://cdn.beautyglow.hu/images/c1-2.jpg',
+    'https://cdn.beautyglow.hu/images/c1-3.jpg',
+    'https://cdn.beautyglow.hu/images/c1-4.jpg',
+    'https://cdn.beautyglow.hu/images/c1-5.jpg',
+    'https://cdn.beautyglow.hu/images/c1-6.jpg',
+    'https://cdn.beautyglow.hu/images/c1-7.jpg'
 ]);
 
 const carousel2 = new Carousel('carouselTrack2', [
-    '../images/c2-1.jpg',
-    '../images/c2-2.jpg',
-    '../images/c2-3.jpg',
-    '../images/c2-4.jpg',
-    '../images/c2-5.jpg',
-    '../images/c2-6.jpg',
-    '../images/c2-7.jpg'
+    'https://cdn.beautyglow.hu/images/c2-1.jpg',
+    'https://cdn.beautyglow.hu/images/c2-2.jpg',
+    'https://cdn.beautyglow.hu/images/c2-3.jpg',
+    'https://cdn.beautyglow.hu/images/c2-4.jpg',
+    'https://cdn.beautyglow.hu/images/c2-5.jpg',
+    'https://cdn.beautyglow.hu/images/c2-6.jpg',
+    'https://cdn.beautyglow.hu/images/c2-7.jpg'
 ]);
 
 const carousel3 = new Carousel('carouselTrack3', [
-    '../images/c3-1.jpg',
-    '../images/c3-2.jpg',
-    '../images/c3-3.jpg',
-    '../images/c3-4.jpg',
-    '../images/c3-5.jpg',
-    '../images/c3-6.jpg'
+    'https://cdn.beautyglow.hu/images/c3-1.jpg',
+    'https://cdn.beautyglow.hu/images/c3-2.jpg',
+    'https://cdn.beautyglow.hu/images/c3-3.jpg',
+    'https://cdn.beautyglow.hu/images/c3-4.jpg',
+    'https://cdn.beautyglow.hu/images/c3-5.jpg',
+    'https://cdn.beautyglow.hu/images/c3-6.jpg'
 ]);
 
 const carousel4 = new Carousel('carouselTrack4', [
-    '../images/c4-1.jpg',
-    '../images/c4-2.jpg',
-    '../images/c4-3.jpg',
-    '../images/c4-4.jpg',
-    '../images/c4-5.jpg',
-    '../images/c4-7.jpg'
+    'https://cdn.beautyglow.hu/images/c4-1.jpg',
+    'https://cdn.beautyglow.hu/images/c4-2.jpg',
+    'https://cdn.beautyglow.hu/images/c4-3.jpg',
+    'https://cdn.beautyglow.hu/images/c4-4.jpg',
+    'https://cdn.beautyglow.hu/images/c4-5.jpg',
+    'https://cdn.beautyglow.hu/images/c4-7.jpg'
 ]);
 
 const carousel5 = new Carousel('carouselTrack5', [
-    '../images/c5-1.jpg',
-    '../images/c5-2.jpg',
-    '../images/c5-3.jpg',
-    '../images/c5-4.jpg',
-    '../images/c5-5.jpg',
-    '../images/c5-6.jpg',
-    '../images/c5-7.jpg'
+    'https://cdn.beautyglow.hu/images/c5-1.jpg',
+    'https://cdn.beautyglow.hu/images/c5-2.jpg',
+    'https://cdn.beautyglow.hu/images/c5-3.jpg',
+    'https://cdn.beautyglow.hu/images/c5-4.jpg',
+    'https://cdn.beautyglow.hu/images/c5-5.jpg',
+    'https://cdn.beautyglow.hu/images/c5-6.jpg',
+    'https://cdn.beautyglow.hu/images/c5-7.jpg'
 ]);
 
 window.addEventListener('scroll', toggleNavbar);
