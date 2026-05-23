@@ -3,6 +3,10 @@
     font-family: 'Inria Sans';
 }
 
+body {
+    overflow-x: hidden;
+}
+
 h1 {
     font-family: 'Inria Serif';
     color: #C2666C !important;
@@ -39,6 +43,7 @@ b {
         opacity: 0;
         transform: translateY(-15px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -152,22 +157,31 @@ a {
         flex: 0 0 100%;
         min-width: 100%;
     }
+
     .carousel-item-custom img {
         height: 65vw !important;
         object-fit: contain !important;
     }
+
+
 }
 
 @media (max-width: 768px) {
     .hide-on-mobile {
         display: none !important;
     }
-    
+
     .nav-button-adjust {
-        margin:auto !important;
+        margin: auto !important;
     }
 
-    p, h1, h2, h3, h4, h5, h6 {
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         text-align: center !important;
     }
 
