@@ -117,7 +117,7 @@ function toggleNavbar() {
 
     const navbar = document.querySelector('.main-nav');
     const scrollPos = window.scrollY;
-
+    console.log(scrollPos);
     if (scrollPos > 800) {
         navbar.classList.add('show');
     } else {

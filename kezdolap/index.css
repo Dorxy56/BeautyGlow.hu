@@ -3,8 +3,8 @@
     font-family: 'Inria Sans';
 }
 
-body {
-    overflow-x: hidden;
+body, html {
+    overflow-x:clip !important;
 }
 
 h1 {
@@ -217,6 +217,17 @@ a {
     .footer-icon {
         width: 22px;
     }
+
+    .bottom-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .bottom-nav .btn {
+        margin: 0 !important;
+        width: 180px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -244,5 +255,17 @@ a {
 
     .carousel-arrow.right {
         right: 0.3rem;
+    }
+
+    .nav-button-adjust {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.3rem;
+    }
+
+    .main-nav .btn {
+        padding: 0.2rem 0.5rem !important;
+        font-size: 0.75rem !important;
+        margin: 0 !important;
     }
 }
