@@ -1,0 +1,378 @@
+* {
+    color: #403732;
+    font-family: 'Inria Sans';
+}
+
+body,
+html {
+    overflow-x: clip !important;
+}
+
+h1 {
+    font-family: 'Inria Serif';
+    color: #C2666C !important;
+    font-size: 5rem !important;
+}
+
+b {
+    color: #C2666C;
+}
+
+.main-nav {
+    display: none !important;
+    content-visibility: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.main-nav.show {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    content-visibility: visible !important;
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+    animation: navFadeIn 0.3s ease forwards;
+}
+
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a:not(.btn) {
+    color: #C2666C !important;
+    text-decoration: underline !important;
+}
+
+a.btn {
+    text-decoration: none !important;
+}
+
+.hero-section {
+    background-color: #A49B8A;
+    margin-bottom: 2rem;
+}
+
+.btn:disabled {
+    background-color: #C2666C !important;
+    color: #D9D9D9 !important;
+}
+
+.btn {
+    background-color: #D9D9D9 !important;
+    color: #403732 !important;
+    font-family: 'Inria Sans' !important;
+}
+
+.btn:hover {
+    background-color: #C2666C !important;
+    color: #D9D9D9 !important;
+}
+
+.pricing-card {
+    background-color: #f5efe8;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+}
+
+.pricing-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(164, 155, 138, 0.25);
+}
+
+.pricing-row:last-of-type {
+    border-bottom: none;
+}
+
+.pricing-label {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.pricing-dots {
+    flex: 1;
+    border-bottom: 2px dotted #C2666C;
+    opacity: 0.35;
+    margin-bottom: 4px;
+}
+
+.pricing-price {
+    font-family: 'Inria Serif';
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #C2666C !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.pricing-note {
+    font-size: 0.85rem;
+    color: #6b5e50 !important;
+    opacity: 0.8;
+    padding-left: 0.25rem;
+}
+
+.pricing-badge {
+    display: inline-block;
+    background-color: #C2666C;
+    color: #fff !important;
+    font-size: 0.65rem;
+    font-family: 'Inria Sans';
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+    position: relative;
+    top: -2px;
+}
+
+/* Csomag kártyák */
+.package-card {
+    background-color: #f5efe8;
+    border-radius: 12px;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.package-card.package-featured {
+    background-color: #C2666C;
+}
+
+.package-badge-top {
+    display: inline-block;
+    background-color: #fff;
+    color: #C2666C !important;
+    font-size: 0.7rem;
+    font-family: 'Inria Sans';
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.2rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.package-tagline {
+    font-family: 'Inria Sans';
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    opacity: 0.75;
+}
+
+.package-featured .package-tagline {
+    color: #f5efe8 !important;
+}
+
+.package-name {
+    font-family: 'Inria Serif' !important;
+    color: #C2666C !important;
+    font-size: 1.6rem !important;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+}
+
+.package-featured .package-name {
+    color: #fff !important;
+}
+
+.package-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    flex: 1;
+}
+
+.package-details li {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(164, 155, 138, 0.25);
+    font-size: 0.95rem;
+    padding-left: 1.4rem;
+    position: relative;
+}
+
+.package-featured .package-details li {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+}
+
+.package-details li:last-child {
+    border-bottom: none;
+}
+
+.package-details li::before {
+    content: "✓";
+    color: #C2666C;
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+}
+
+.package-featured .package-details li::before {
+    color: #f5efe8;
+}
+
+.package-price {
+    font-family: 'Inria Serif';
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #C2666C !important;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(194, 102, 108, 0.2);
+}
+
+.package-featured .package-price {
+    color: #fff !important;
+    border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 200px;
+}
+
+.footer-contact {
+    font-size: 3rem;
+    text-align: right;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-icon {
+    width: 40px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
+.footer-copy {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+
+    .nav-button-adjust {
+        margin: auto !important;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-align: center !important;
+    }
+
+    .main-nav .navbar-brand {
+        display: none !important;
+    }
+
+    .pricing-card {
+        padding: 1.25rem 1rem;
+    }
+
+    .pricing-label {
+        font-size: 0.95rem;
+        white-space: normal;
+    }
+
+    .pricing-price {
+        font-size: 0.95rem;
+    }
+
+    .footer-main {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 150px;
+    }
+
+    .footer-contact {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .footer-icon {
+        width: 22px;
+    }
+
+    .bottom-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .bottom-nav .btn {
+        margin: 0 !important;
+        width: 180px;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 2.4rem !important;
+    }
+
+    .hero-section .container img {
+        width: 130px !important;
+        height: auto !important;
+    }
+
+    .hero-section .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-button-adjust {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.3rem;
+    }
+
+    .main-nav .btn {
+        padding: 0.2rem 0.5rem !important;
+        font-size: 0.75rem !important;
+        margin: 0 !important;
+    }
+}

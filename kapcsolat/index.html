@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolat – Beauty & Glow Studio</title>
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Bootstrap CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar main-nav" style="background-color: #A49B8A; width: 100%; border-radius: 0 0 15px 15px;">
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="https://cdn.beautyglow.hu/images/logo.png" alt="Logo" class="img-fluid mx-5" width="90"
+                    height="80" /></a>
+            <div class="d-flex nav-button-adjust">
+                <a class="btn mx-2" href="/kezdolap/">Kezdőoldal</a>
+                <a class="btn mx-2" href="/galeria/">Galéria</a>
+                <a class="btn mx-2" href="/magamrol/">Magamról</a>
+                <a class="btn mx-2" href="/arlista/">Árlista</a>
+                <button type="button" class="btn mx-2 hide-on-mobile" disabled>Kapcsolat</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-5 hero-section" style="margin-bottom: 5%">
+        <div class="container text-center py-4">
+
+            <img src="https://cdn.beautyglow.hu/images/logo.png" alt="Logo" class="img-fluid mb-4" width="250" height="100" />
+
+            <h1 class="display-4 mb-2" style="font-family: 'Inria Serif', serif; color: #ffffff !important;">
+                Írj nekem,
+            </h1>
+            <h1 class="display-4 mb-3"
+                style="font-family: 'Inria Serif', serif; color: #fff !important; font-style: italic;">
+                örülök minden megkeresésnek
+            </h1>
+
+            <hr style="width: 60px; border-color: #D9D9D9; opacity: 0.5; margin: 1.5rem auto;">
+
+            <p class="mb-4 mx-auto"
+                style="max-width: 520px; color: #FFFFFF; opacity: 0.85; font-size: 1rem; line-height: 1.8;">
+                Legyen szó időpontfoglalásról, kérdésről vagy csak egy rövid üzenetről –
+                töltsd ki az alábbi űrlapot és hamarosan jelentkezem!
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Elérhetőségek -->
+    <div class="container">
+        <h1 class="text-start mt-5 mb-4">Elérhetőségek</h1>
+
+        <div class="contact-info-card mb-5">
+            <div class="contact-info-row">
+                <span class="contact-info-label">Email</span>
+                <span class="contact-info-value">bernadettwilhelm@gmail.com</span>
+            </div>
+            <div class="contact-info-row">
+                <span class="contact-info-label">Telefon</span>
+                <span class="contact-info-value">+36 30 549 9699</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kapcsolatfelvételi űrlap -->
+    <div class="container">
+        <h1 class="text-end mt-5 mb-4">Küldj üzenetet</h1>
+
+        <form class="contact-form mb-5" id="contact-form">
+            <div class="mb-4">
+                <label for="name" class="form-label contact-form-label">Neved</label>
+                <input type="text" class="form-control contact-input" id="name" placeholder="Pl. Kovács Anna">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="form-label contact-form-label">Email cím</label>
+                <input type="email" class="form-control contact-input" id="email" placeholder="pelda@email.hu">
+            </div>
+            <div class="mb-4">
+                <label for="subject" class="form-label contact-form-label">Tárgy</label>
+                <input type="text" class="form-control contact-input" id="subject" placeholder="Pl. Időpontfoglalás, kérdés...">
+            </div>
+            <div class="mb-4">
+                <label for="message" class="form-label contact-form-label">Üzeneted</label>
+                <textarea class="form-control contact-input" id="message" rows="5"
+                    placeholder="Írj bátran, minden kérdésre szívesen válaszolok!"></textarea>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn px-5 py-2 contact-submit">Küldés</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="d-flex mx-auto my-5 justify-content-center bottom-nav">
+        <a class="btn btn-lg mx-5" href="/kezdolap/">Kezdőoldal</a>
+        <a class="btn btn-lg mx-5" href="/galeria/">Galéria</a>
+        <a class="btn btn-lg mx-5" href="/magamrol/">Magamról</a>
+        <a class="btn btn-lg mx-5" href="/arlista/">Árlista</a>
+    </div>
+
+    <footer style="background-color: #A49B8A; padding: 2rem 5% 1rem;">
+        <div class="footer-main">
+            <img src="https://cdn.beautyglow.hu/images/logo.png" alt="Logo" class="footer-logo">
+
+            <div class="footer-contact">
+                <p>info@beautyglow.hu <img src="https://cdn.beautyglow.hu/icons/envelope-solid-full.svg" alt="Envelope icon" class="footer-icon"></p>
+                <p>+36 30 549 9699 <img src="https://cdn.beautyglow.hu/icons/phone-solid-full.svg" alt="Phone icon" class="footer-icon"></p>
+                <p class="mb-0">@bernadett.wilhelm <img src="https://cdn.beautyglow.hu/icons/square-facebook-brands-solid-full.svg" alt="Facebook icon" class="footer-icon"></p>
+            </div>
+        </div>
+
+        <div class="footer-copy text-center">
+            <p style="font-size: 0.8rem; margin-bottom: 0.2rem;">&copy; 2026 Beauty & Glow Studio | Minden jog fenntartva.</p>
+            <p style="font-size: 0.8rem; margin-bottom: 0;">Oldalt készítette: <a href="https://www.drxy.hu" style="color: #6b5e50 !important;">Kis-Borbás Dorián</a></p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

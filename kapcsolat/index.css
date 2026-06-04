@@ -1,0 +1,333 @@
+* {
+    color: #403732;
+    font-family: 'Inria Sans';
+}
+
+body,
+html {
+    overflow-x: clip !important;
+}
+
+h1 {
+    font-family: 'Inria Serif';
+    color: #C2666C !important;
+    font-size: 5rem !important;
+}
+
+b {
+    color: #C2666C;
+}
+
+.main-nav {
+    display: none !important;
+    content-visibility: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.main-nav.show {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    content-visibility: visible !important;
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+    animation: navFadeIn 0.3s ease forwards;
+}
+
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a:not(.btn) {
+    color: #C2666C !important;
+    text-decoration: underline !important;
+}
+
+a.btn {
+    text-decoration: none !important;
+}
+
+.hero-section {
+    background-color: #A49B8A;
+    margin-bottom: 2rem;
+}
+
+.btn:disabled {
+    background-color: #C2666C !important;
+    color: #D9D9D9 !important;
+}
+
+.btn {
+    background-color: #D9D9D9 !important;
+    color: #403732 !important;
+    font-family: 'Inria Sans' !important;
+}
+
+.btn:hover {
+    background-color: #C2666C !important;
+    color: #D9D9D9 !important;
+}
+
+/* Elérhetőségek kártya */
+/* Formspree visszajelzés dobozok */
+.form-success-box {
+    background-color: #f5efe8;
+    border-left: 4px solid #C2666C;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    text-align: center;
+}
+
+.form-success-title {
+    font-family: 'Inria Serif';
+    color: #C2666C !important;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-success-text {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    opacity: 0.85;
+}
+
+.form-error-box {
+    background-color: #fdf0f0;
+    border-left: 4px solid #C2666C;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    color: #6b5e50 !important;
+}
+
+.contact-info-card {
+    background-color: #f5efe8;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+}
+
+.contact-info-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(164, 155, 138, 0.25);
+}
+
+.contact-info-row:last-child {
+    border-bottom: none;
+}
+
+.contact-info-label {
+    font-family: 'Inria Serif';
+    font-size: 1rem;
+    font-weight: 700;
+    color: #C2666C !important;
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.contact-info-value {
+    font-size: 1.1rem;
+}
+
+/* Űrlap */
+.contact-form {
+    background-color: #f5efe8;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+}
+
+.contact-form-label {
+    font-family: 'Inria Serif';
+    font-weight: 700;
+    color: #C2666C !important;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.contact-input {
+    background-color: #fff !important;
+    border: 1px solid rgba(164, 155, 138, 0.5) !important;
+    border-radius: 6px !important;
+    color: #403732 !important;
+    font-family: 'Inria Sans' !important;
+    font-size: 1rem !important;
+}
+
+.contact-input:focus {
+    border-color: #C2666C !important;
+    box-shadow: 0 0 0 0.2rem rgba(194, 102, 108, 0.15) !important;
+    outline: none !important;
+}
+
+.contact-input::placeholder {
+    color: #b0a090 !important;
+    opacity: 1;
+}
+
+.contact-submit {
+    background-color: #C2666C !important;
+    color: #fff !important;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.contact-submit:hover {
+    background-color: #a8484e !important;
+    color: #fff !important;
+}
+
+/* Footer */
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 200px;
+}
+
+.footer-contact {
+    font-size: 3rem;
+    text-align: right;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-icon {
+    width: 40px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
+.footer-copy {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+
+    .nav-button-adjust {
+        margin: auto !important;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-align: center !important;
+    }
+
+    .main-nav .navbar-brand {
+        display: none !important;
+    }
+
+    .contact-info-card,
+    .contact-form {
+        padding: 1.25rem 1rem;
+    }
+
+    .contact-info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    .contact-info-label {
+        width: auto;
+    }
+
+    .text-end {
+        text-align: center !important;
+    }
+
+    .contact-submit {
+        width: 100%;
+    }
+
+    .footer-main {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 150px;
+    }
+
+    .footer-contact {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .footer-icon {
+        width: 22px;
+    }
+
+    .bottom-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .bottom-nav .btn {
+        margin: 0 !important;
+        width: 180px;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 2.4rem !important;
+    }
+
+    .hero-section .container img {
+        width: 130px !important;
+        height: auto !important;
+    }
+
+    .hero-section .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-button-adjust {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.3rem;
+    }
+
+    .main-nav .btn {
+        padding: 0.2rem 0.5rem !important;
+        font-size: 0.75rem !important;
+        margin: 0 !important;
+    }
+}
