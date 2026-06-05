@@ -27,7 +27,7 @@
             <a class="navbar-brand"><img src="https://cdn.beautyglow.hu/images/logo.png" alt="Logo" class="img-fluid mx-5" width="90"
                     height="80" /></a>
             <div class="d-flex nav-button-adjust">
-                <a class="btn mx-2" href="/kezdolap/">Kezdőoldal</a>
+                <a class="btn mx-2" href="/">Kezdőoldal</a>
                 <a class="btn mx-2" href="/galeria/">Galéria</a>
                 <a class="btn mx-2" href="/magamrol/">Magamról</a>
                 <a class="btn mx-2" href="/arlista/">Árlista</a>
@@ -36,27 +36,20 @@
         </div>
     </nav>
 
-    <div class="container-fluid py-5 hero-section" style="margin-bottom: 5%">
-        <div class="container text-center py-4">
-
-            <img src="https://cdn.beautyglow.hu/images/logo.png" alt="Logo" class="img-fluid mb-4" width="250" height="100" />
-
-            <h1 class="display-4 mb-2" style="font-family: 'Inria Serif', serif; color: #ffffff !important;">
-                Írj nekem,
-            </h1>
-            <h1 class="display-4 mb-3"
-                style="font-family: 'Inria Serif', serif; color: #fff !important; font-style: italic;">
-                örülök minden megkeresésnek
-            </h1>
-
-            <hr style="width: 60px; border-color: #D9D9D9; opacity: 0.5; margin: 1.5rem auto;">
-
-            <p class="mb-4 mx-auto"
-                style="max-width: 520px; color: #FFFFFF; opacity: 0.85; font-size: 1rem; line-height: 1.8;">
-                Legyen szó időpontfoglalásról, kérdésről vagy csak egy rövid üzenetről –
-                töltsd ki az alábbi űrlapot és hamarosan jelentkezem!
-            </p>
-
+    <div class="page-header">
+        <div class="page-header-inner d-flex align-items-right">
+            <a href="/"><img src="https://cdn.beautyglow.hu/images/logo.png" alt="Logo" class="page-header-logo" /></a>
+            <div>
+                <p class="page-header-sub">Beauty &amp; Glow Studio</p>
+                <h1 class="page-header-title">Kapcsolat</h1>
+            </div>
+            <div class="d-flex ms-auto nav-button-adjust">
+                <a class="btn mx-2" href="/">Kezdőoldal</a>
+                <a class="btn mx-2" href="/galeria/">Galéria</a>
+                <a class="btn mx-2" href="/magamrol/">Magamról</a>
+                <a class="btn mx-2" href="/arlista/">Árlista</a>
+                <button type="button" class="btn mx-2 hide-on-mobile" disabled>Kapcsolat</button>
+            </div>
         </div>
     </div>
 
@@ -80,32 +73,45 @@
     <div class="container">
         <h1 class="text-end mt-5 mb-4">Küldj üzenetet</h1>
 
+        <!-- Sikeres küldés üzenet (alapból rejtett) -->
+        <div id="form-success" class="form-success-box mb-5" style="display: none;">
+            <p class="form-success-title">Üzeneted megérkezett! 🌸</p>
+            <p class="form-success-text">Köszönöm, hogy írtál! Hamarosan visszajelzek emailen keresztül.</p>
+        </div>
+
+        <!-- Hiba üzenet (alapból rejtett) -->
+        <div id="form-error" class="form-error-box mb-4" style="display: none;">
+            <p class="mb-0">Valami hiba történt a küldés során. Kérlek próbáld újra, vagy írj közvetlenül a <strong>bernadettwilhelm@gmail.com</strong> címre.</p>
+        </div>
+
         <form class="contact-form mb-5" id="contact-form">
             <div class="mb-4">
                 <label for="name" class="form-label contact-form-label">Neved</label>
-                <input type="text" class="form-control contact-input" id="name" placeholder="Pl. Kovács Anna">
+                <input type="text" class="form-control contact-input" id="name" name="name" placeholder="Pl. Kovács Anna" required>
             </div>
             <div class="mb-4">
-                <label for="email" class="form-label contact-form-label">Email cím</label>
-                <input type="email" class="form-control contact-input" id="email" placeholder="pelda@email.hu">
+                <label for="email" class="form-label contact-form-label">Saját email címed</label>
+                <input type="email" class="form-control contact-input" id="email" name="email" placeholder="pelda@gmail.com" required>
             </div>
             <div class="mb-4">
                 <label for="subject" class="form-label contact-form-label">Tárgy</label>
-                <input type="text" class="form-control contact-input" id="subject" placeholder="Pl. Időpontfoglalás, kérdés...">
+                <input type="text" class="form-control contact-input" id="subject" name="_subject" placeholder="Pl. Időpontfoglalás, kérdés...">
             </div>
             <div class="mb-4">
                 <label for="message" class="form-label contact-form-label">Üzeneted</label>
-                <textarea class="form-control contact-input" id="message" rows="5"
-                    placeholder="Írj bátran, minden kérdésre szívesen válaszolok!"></textarea>
+                <textarea class="form-control contact-input" id="message" name="message" rows="5"
+                    placeholder="Írj bátran, minden kérdésre szívesen válaszolok!" required></textarea>
             </div>
+            <!-- Spam védelem (Formspree honeypot) -->
+            <input type="text" name="_gotcha" style="display: none;">
             <div class="text-end">
-                <button type="submit" class="btn px-5 py-2 contact-submit">Küldés</button>
+                <button type="submit" class="btn px-5 py-2 contact-submit" id="submit-btn">Küldés</button>
             </div>
         </form>
     </div>
 
     <div class="d-flex mx-auto my-5 justify-content-center bottom-nav">
-        <a class="btn btn-lg mx-5" href="/kezdolap/">Kezdőoldal</a>
+        <a class="btn btn-lg mx-5" href="/">Kezdőoldal</a>
         <a class="btn btn-lg mx-5" href="/galeria/">Galéria</a>
         <a class="btn btn-lg mx-5" href="/magamrol/">Magamról</a>
         <a class="btn btn-lg mx-5" href="/arlista/">Árlista</a>

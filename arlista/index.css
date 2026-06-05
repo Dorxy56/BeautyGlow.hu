@@ -60,6 +60,55 @@ a.btn {
     text-decoration: none !important;
 }
 
+/* Kisebb oldal fejléc (aloldalakhoz) */
+.page-header {
+    background-color: #A49B8A;
+    padding: 1.5rem 2rem;
+    border-radius: 0 0 15px 15px;
+    margin-bottom: 2rem;
+}
+
+.page-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.page-header-logo {
+    width: 65px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.page-header-sub {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f5efe8 !important;
+    opacity: 0.75;
+    margin-bottom: 0.1rem;
+}
+
+.page-header-title {
+    font-family: 'Inria Serif' !important;
+    color: #ffffff !important;
+    font-size: 2.5rem !important;
+    margin: 0 !important;
+    line-height: 1;
+}
+
+@media (max-width: 450px) {
+    .page-header-title {
+        font-size: 1.8rem !important;
+    }
+
+    .page-header-logo {
+        width: 45px;
+    }
+}
+
 .hero-section {
     background-color: #A49B8A;
     margin-bottom: 2rem;
