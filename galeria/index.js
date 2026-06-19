@@ -1,18 +1,45 @@
 // =============================================
-// BEÁLLÍTÁSOK
-// A Worker deploy után cseréld le az alábbi URL-t a valódi Worker URL-re!
-// Pl.: 'https://beautyglow-gallery.YOUR_SUBDOMAIN.workers.dev'
+// CLOUDINARY BEÁLLÍTÁS
+// 1. Regisztrálj: https://cloudinary.com (ingyenes)
+// 2. Keresd meg a Cloud Name-t a dashboardon
+// 3. Írd be ide:
+const CLOUD_NAME = 'dslkd5nqh';
+//
+// KATEGÓRIÁK HOZZÁADÁSA:
+// - Töltsd fel a képeket Cloudinary-ra
+// - Feltöltéskor adj hozzá egy tag-et (pl. "portre")
+// - Add hozzá az alábbi tömbhöz: { id: 'portre', name: 'Portrék' }
+// - Kész – a képek automatikusan megjelennek
 // =============================================
-const API_URL    = '/api/gallery';
-const CDN_BASE   = 'https://cdn.beautyglow.hu/images/';
+const CATEGORIES = [
+    { id: 'portre',  name: 'Portrék'       },
+    { id: 'paros',   name: 'Páros fotózás'  },
+    { id: 'csaladi', name: 'Családi'        },
+    { id: 'eskuvo',  name: 'Esküvő'        },
+    { id: 'kellekes', name: 'Kellékes fotózás' },
+];
+
+// =============================================
+// Cloudinary URL segédfüggvények
+// =============================================
+function thumbUrl(publicId, format) {
+    return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/q_auto,f_auto,w_600,c_fill,ar_3:4/${publicId}.${format}`;
+}
+
+function fullUrl(publicId, format) {
+    return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/q_auto,f_auto/${publicId}.${format}`;
+}
+
+function tagListUrl(tag) {
+    return `https://res.cloudinary.com/${CLOUD_NAME}/image/list/${tag}.json`;
+}
 
 // =============================================
 // Állapot
 // =============================================
-let allCategories   = [];
-let activeFilter    = 'osszes';
-let lbImages        = [];   // aktuálisan lightboxban lévő képek tömbje
-let lbIndex         = 0;    // aktuális index
+let allCategories = [];
+let lbImages      = [];
+let lbIndex       = 0;
 
 // =============================================
 // Inicializálás
@@ -20,18 +47,34 @@ let lbIndex         = 0;    // aktuális index
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
+    showLoader();
     try {
-        showLoader();
-        const res = await fetch(API_URL);
-        if (!res.ok) throw new Error('API hiba');
-        const data = await res.json();
-        allCategories = data.categories || [];
+        // Minden kategória képeit párhuzamosan kérjük le
+        const results = await Promise.all(
+            CATEGORIES.map(async cat => {
+                try {
+                    const res = await fetch(tagListUrl(cat.id));
+                    if (!res.ok) return { ...cat, images: [] };
+                    const data = await res.json();
+                    const images = (data.resources || []).map(r => ({
+                        thumb: thumbUrl(r.public_id, r.format),
+                        full:  fullUrl(r.public_id, r.format),
+                    }));
+                    return { ...cat, images };
+                } catch {
+                    return { ...cat, images: [] };
+                }
+            })
+        );
+
+        // Csak azok a kategóriák jelennek meg, amikben van kép
+        allCategories = results.filter(c => c.images.length > 0);
 
         renderFilters();
         renderGrid('osszes');
     } catch (err) {
         showError();
-        console.error('Galéria betöltési hiba:', err);
+        console.error('Galéria hiba:', err);
     } finally {
         hideLoader();
     }
@@ -43,61 +86,46 @@ async function init() {
 function renderFilters() {
     const bar = document.getElementById('gallery-filters');
     bar.innerHTML = '';
-
-    // "Összes" gomb
     bar.appendChild(createFilterBtn('osszes', 'Összes', true));
-
-    // Egy gomb kategóriánként
-    allCategories.forEach(cat => {
-        bar.appendChild(createFilterBtn(cat.id, cat.name, false));
-    });
+    allCategories.forEach(cat => bar.appendChild(createFilterBtn(cat.id, cat.name, false)));
 }
 
 function createFilterBtn(id, label, isActive) {
     const btn = document.createElement('button');
     btn.className = 'btn filter-btn' + (isActive ? ' active' : '');
     btn.textContent = label;
-    btn.dataset.id = id;
     btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        activeFilter = id;
         renderGrid(id);
     });
     return btn;
 }
 
 // =============================================
-// Képrács renderelés
+// Képrács
 // =============================================
 function renderGrid(filterId) {
     const grid = document.getElementById('gallery-grid');
     grid.innerHTML = '';
 
-    const filtered = filterId === 'osszes'
-        ? allCategories
-        : allCategories.filter(c => c.id === filterId);
+    const visible = filterId === 'osszes' ? allCategories : allCategories.filter(c => c.id === filterId);
 
-    filtered.forEach(cat => {
-        cat.images.forEach((filename, idx) => {
-            const src  = `${CDN_BASE}${cat.folder}${filename}`;
+    visible.forEach(cat => {
+        cat.images.forEach((img, idx) => {
             const item = document.createElement('div');
             item.className = 'gallery-item';
             item.style.animationDelay = `${idx * 0.04}s`;
 
-            const img = document.createElement('img');
-            img.src             = src;
-            img.alt             = `${cat.name} – ${idx + 1}`;
-            img.loading         = 'lazy';
-            img.decoding        = 'async';
+            const el = document.createElement('img');
+            el.src      = img.thumb;
+            el.alt      = `${cat.name} – ${idx + 1}`;
+            el.loading  = 'lazy';
+            el.decoding = 'async';
 
-            item.appendChild(img);
+            item.appendChild(el);
             item.addEventListener('click', () => {
-                // Lightboxban az adott kategória képeit lapozza
-                lbImages = cat.images.map(f => ({
-                    src:     `${CDN_BASE}${cat.folder}${f}`,
-                    caption: cat.name
-                }));
+                lbImages = cat.images.map((i, n) => ({ src: i.full, caption: `${cat.name}  •  ${n + 1} / ${cat.images.length}` }));
                 openLightbox(idx);
             });
 
@@ -117,12 +145,8 @@ document.getElementById('lb-close').addEventListener('click', closeLightbox);
 document.getElementById('lb-prev').addEventListener('click', () => moveLightbox(-1));
 document.getElementById('lb-next').addEventListener('click', () => moveLightbox(1));
 
-// Kattintás a sötét háttérre → bezár
-lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) closeLightbox();
-});
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
-// Billentyűzet
 document.addEventListener('keydown', e => {
     if (lightbox.style.display === 'none') return;
     if (e.key === 'Escape')     closeLightbox();
@@ -149,13 +173,12 @@ function moveLightbox(dir) {
 }
 
 function updateLightboxImage() {
-    const current = lbImages[lbIndex];
-    lbImg.src     = current.src;
-    lbCap.textContent = `${current.caption}  •  ${lbIndex + 1} / ${lbImages.length}`;
+    lbImg.src       = lbImages[lbIndex].src;
+    lbCap.textContent = lbImages[lbIndex].caption;
 }
 
 // =============================================
-// Loader / hiba segédfüggvények
+// Loader / hiba
 // =============================================
 function showLoader() {
     document.getElementById('gallery-loader').style.display = 'flex';
@@ -174,13 +197,9 @@ function showError() {
 }
 
 // =============================================
-// Sticky navbar scroll
+// Sticky navbar
 // =============================================
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.main-nav');
-    if (window.scrollY > 400) {
-        navbar.classList.add('show');
-    } else {
-        navbar.classList.remove('show');
-    }
+    navbar.classList.toggle('show', window.scrollY > 400);
 });

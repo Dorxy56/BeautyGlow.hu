@@ -160,7 +160,7 @@ a.btn {
 /* Képrács */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
 
@@ -175,7 +175,7 @@ a.btn {
 
 .gallery-item img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
     display: block;
     transition: transform 0.35s ease;
@@ -196,7 +196,6 @@ a.btn {
     inset: 0;
     background: rgba(0, 0, 0, 0.92);
     z-index: 9999;
-    display: flex !important;
     align-items: center;
     justify-content: center;
 }
@@ -211,7 +210,9 @@ a.btn {
 
 .lightbox-content img {
     max-width: 90vw;
-    max-height: 82vh;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
     border-radius: 4px;
     color: #fff !important;
