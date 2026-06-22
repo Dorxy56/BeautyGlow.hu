@@ -281,6 +281,16 @@ a.btn {
         margin: auto !important;
     }
 
+    .page-header-inner {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .page-header-sub,
+    .page-header-title {
+        text-align: left !important;
+    }
+
     p,
     h1,
     h2,

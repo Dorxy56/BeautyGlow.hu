@@ -74,7 +74,7 @@ const carousel1 = new Carousel('carouselTrack1', [
 ]);
 
 const carousel2 = new Carousel('carouselTrack2', [
-    'https://cdn.beautyglow.hu/images/c2-1.jpg',
+    'https://cdn.beautyglow.hu/images/c2-8.jpg',
     'https://cdn.beautyglow.hu/images/c2-2.jpg',
     'https://cdn.beautyglow.hu/images/c2-3.jpg',
     'https://cdn.beautyglow.hu/images/c2-4.jpg',
